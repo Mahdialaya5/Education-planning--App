@@ -1,0 +1,19 @@
+<app-navbar    />
+<div  class="form_student" >
+    <label>Email</label>
+    <input type="text" #newemail/>
+    <label>name</label>
+    <input type="text"  #newname />
+    <label>Phone</label>
+    <input type="number"  #newphone />
+    <label>Formation</label>
+    <select  #newformation   >
+        <option  value="full-stack"  >full-stack</option>
+        <option  value="data scientist"  >data scientist</option>
+   </select>   
+    <label>select guild</label>
+    <select #guild   >
+        @for(guild of data ; track guild._id) { <option value={{guild._id}}  >{{guild.name}}</option>}
+    </select>
+    <button class="btn_addstudent"  routerLink="/studentlist" (click)="add(newemail.value,newname.value,newphone.value,guild.value,newformation.value)"  >save</button>
+</div>

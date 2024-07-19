@@ -1,0 +1,11 @@
+<app-navbar    />
+<div  class="form_student" >
+    <label>Email</label>
+    <input type="text" #newemail/>
+    <label>name</label>
+    <input type="text" #newname/>
+    <label>Password</label>
+    <input type="number"  #password />
+   <button class="btn_addstudent"  routerLink="/userslist"  (click)="add(newemail.value,newname.value,password.value)"  >save</button>
+</div>
+

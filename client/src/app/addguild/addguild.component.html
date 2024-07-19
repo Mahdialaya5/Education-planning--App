@@ -1,0 +1,15 @@
+<app-navbar    />
+<div class="addguild"  >
+    <label>Name</label>
+    <input type="text"  #newname />
+    <label>Formation</label>
+    <select  #formation  >
+        <option  value="full-stack" >full-stack</option>
+        <option  value="data scientist"  >data scientist</option>
+    </select>
+    <select  #instructor  >
+      @for(user of users; track user._id ) { <option value={{user._id}}  >{{user.name}}</option>}
+       
+    </select>
+ <button class="btn_addguild"  routerLink="/guildlist"  (click)="add(newname.value,formation.value,instructor.value)" >save</button>
+</div>

@@ -1,0 +1,24 @@
+table{
+    position: relative;
+    left: 100px;
+    width: 92%;
+}
+tr{
+    width: 50px;
+height: 80px;
+}
+thead{
+color: blueviolet;
+font-size: xx-large;
+    height: 100px;
+}
+.btn_adduser{   position: relative;
+    left: 40%;
+    height: 50px;
+    margin-top:20px;
+    background-color: rgb(85, 85, 178);
+    cursor:pointer;
+    width: 90px;
+    border: none;
+    border-radius: 10%;
+    color: aliceblue;}

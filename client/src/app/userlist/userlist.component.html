@@ -1,0 +1,21 @@
+<app-navbar    />
+<table>
+    <thead>
+      <tr>
+        <td>Email</td>
+        <td>name</td>
+      
+      </tr>
+    </thead>
+    <tbody>
+  @for (student of data ; track student._id){
+    <tr>
+        <td>{{student.email}}</td>
+        <td>{{student.name}}</td>
+      
+    </tr>
+  } 
+  
+    </tbody>
+</table>
+<button class="btn_adduser"   routerLink="/adduser" >Add instructor</button>

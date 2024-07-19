@@ -1,0 +1,41 @@
+.form{
+    height: 250px;
+    width: 30%;
+    background-color: #0e2f43bd;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    left: 30%;
+    top: 20px;
+    padding: 20px;
+    border-radius: 4%;
+}
+.login{
+    font-size: x-large;
+    position: relative;
+    left: 40%;
+}
+input{
+    height: 40px;
+    margin:  2%  0px;
+    border-radius: 5%;
+    border: none;
+    width: 60%;
+   position: relative;
+   left: 15%;
+}
+.btn_login{height: 50px;
+position: relative;
+left: 30%;
+margin-top:20px;
+background-color: rgb(21 21 171);
+cursor:pointer;
+width: 90px;
+border: none;
+color: aliceblue;
+border-radius: 10%;}
+.err{
+    margin: 0;
+    color:red
+}

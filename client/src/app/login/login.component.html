@@ -1,0 +1,11 @@
+
+<app-navbar    />
+<div  class="form">
+    <p class="login" >login</p>
+<label>email:</label>
+<input #email   />
+<label>password:</label>
+<input  #password />
+<button class="btn_login"   (click)="login(email.value,password.value)" >login</button>
+<p *ngIf="error;" class="err"   >{{error}}</p>
+</div>

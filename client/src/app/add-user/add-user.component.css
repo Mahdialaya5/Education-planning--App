@@ -1,0 +1,36 @@
+.form_student{
+    height:25em;
+    background-color: #0e2f43bd;
+    position: relative;
+    width: 20.2em;
+    border-radius: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    top: 20px;
+    left: 30%;
+    padding: 3%;
+    color: aliceblue;
+}
+label  {
+    height: 30px;
+}
+input {
+    height: 40px;
+    margin:  2%  0px;
+    border-radius: 5%;
+    border: none;
+}
+
+.btn_addstudent{
+    height: 50px;
+    position: relative;
+    left: 30%;
+    margin-top:20px;
+    background-color: rgb(21 21 171);
+    cursor:pointer;
+    width: 90px;
+    border: none;
+    color: aliceblue;
+    border-radius: 10%;
+}

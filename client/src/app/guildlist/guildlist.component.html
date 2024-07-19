@@ -1,0 +1,20 @@
+<app-navbar    />
+<table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Formation</td>
+        <td>instructor</td>
+      </tr> 
+    </thead>
+    <tbody>
+      @for (guild of data ; track guild._id){
+        <tr>
+            <td>{{guild.name}}</td>
+            <td>{{guild.formation}}</td>
+            <td>{{guild.instructor.name}}</td>
+        </tr>
+      } 
+    </tbody>
+</table>
+<button class="btn_addguild"   routerLink="/addguild" >Add guild</button>
