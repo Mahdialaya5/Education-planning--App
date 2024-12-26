@@ -2,8 +2,6 @@ const User=require("../models/user")
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 
-
-
 exports.register= async (req, res) => {
     const { email, password, role } = req.body
     try {
@@ -20,10 +18,10 @@ exports.register= async (req, res) => {
         newUser.password = hashedPassword
       
         await newUser.save()
-        res.send({ msg: "user added successfuly", user: newUser })
+       return res.status(201).send({ msg: "user added successfuly" })
     } 
     catch (error) {
-        console.log(error);
+        return  res.status(500).send({ msg: error.message });
     }
 }
 
@@ -44,24 +42,22 @@ exports.login=async (req, res) => {
         const token = jwt.sign(payload, process.env.secretKey)
         res.send({ user: existUser, token })
     } catch (error) {
-        console.log(error);
-        res.status(400).send({ msg: error.message })
+        return  res.status(500).send({ msg: error.message });
 }}
 
 exports.current= (req, res) => {
   try{
     res.send(req.user);
 } catch (error) {
-    console.log(error);
+    return  res.status(500).send({ msg: error.message });
     }
 }
 
 exports.getuser=async (req,res) => {
     try {
             const users = await User.find().sort({name:1})
-            res.send( users )
+          return  res.status(200).send(users)
         } 
         catch (error) {
-            console.log(error);
-            res.status(400).send({ msg: error.message });
+            return  res.status(500).send({ msg: error.message });
  }}

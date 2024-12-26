@@ -4,18 +4,17 @@ exports.addstudent=async (req, res) => {
    try {
       const newstudent = new student(req.body)
       await newstudent.save()
-        res.send({ msg: "student added successfuly" })
+       return  res.status(201).send({ msg: "student added successfuly" })
     } 
     catch (error) {
-        console.log(error);
+        return  res.status(500).send({ msg: error.message });
     }}
 
 exports.getstudent=async (req,res) => {
     try {
             const students = await student.find().populate("guild").sort({name:1})
-            res.send( students )
+          return   res.status(200).send(students)
         } 
         catch (error) {
-            console.log(error);
-            res.status(400).send({ msg: error.message });
+          return  res.status(500).send({ msg: error.message });
  }}

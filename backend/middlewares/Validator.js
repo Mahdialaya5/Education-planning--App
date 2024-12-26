@@ -2,14 +2,14 @@ const { check, validationResult } = require("express-validator")
 
 
 const registerCheck = () => [
-    check("email", "this field should be a valid email").isEmail(),
-    check("password", "password should have at least 6 characters").isLength({ min: 6 }),
-    check("name", "name should not empty").notEmpty()
+    check("email", "This field should be a valid email").isEmail(),
+    check("password", "Password should have at least 6 characters").isLength({ min: 6 }),
+    check("name", "Name should not empty").notEmpty()
 ]
 
 const loginCheck = () => [
-    check("email", "this field should be a valid email").isEmail(),
-    check("password", "password should have at least 6 characters").isLength({ min: 6 })
+    check("email", "This field should be a valid email").isEmail(),
+    check("password", "Password should have at least 6 characters").isLength({ min: 6 })
 ]
 
 const validator = (req, res, next) => {

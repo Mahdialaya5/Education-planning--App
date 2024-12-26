@@ -1,8 +1,0 @@
-<nav  class="navbar" >
-    <button class="btn_navbar" *ngIf="token;"  routerLink="/studentlist"  >Students</button>
-    <button  class="btn_navbar" *ngIf="token;" routerLink="/guildlist"   >Guilds</button>
-    <button  class="btn_navbar"     routerLink="/"   >Home</button> 
-    <button  class="btn_navbar"  *ngIf="token;"    routerLink="/userlist"   >instrauctors</button> 
-   <button class="btn_navbar"   *ngIf="token; else login "   (click)="logout()"   >logout</button>
- <ng-template #login  > <button class="btn_navbar" routerLink="/login" >login</button></ng-template> 
-</nav>
