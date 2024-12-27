@@ -31,9 +31,9 @@ export class AddguildComponent {
 
   add(newname: String, newformation: String, withInstuctor: String) {
     this.GuildServices.AddGuild({
-      newname,
-      newformation,
-      withInstuctor,
+     name: newname,
+     formation: newformation,
+      instructor:withInstuctor,
     }).subscribe({
       next: (response: any) => {
         this.res = response;

@@ -14,12 +14,22 @@ import { AuthService } from '../../../core/auth/auth.services';
 export class NavbarComponent {
 
  IsAuth: boolean | undefined;
-
-  constructor(private router: Router,private AuthService:AuthService) {}
+ CurrentUser:any
+  constructor(private router: Router,
+      private Auth:AuthService,
+    private AuthService:AuthService) {}
  
   ngOnInit() {
     this.AuthService.isLoggedIn().subscribe((isLoggedIn) => {
       if (isLoggedIn) {
+        this.Auth.getCurrentUser().subscribe({
+          next: (res: any) => {
+            this.CurrentUser = res;
+          },
+          error: (error: any) => {
+            throw error;
+          },
+        });
         this.IsAuth = true;
       } else {
         this.IsAuth = false;

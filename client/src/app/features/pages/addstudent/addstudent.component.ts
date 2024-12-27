@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { StudentService } from '../../../core/services/student/student.service';
+import { GuildService } from '../../../core/services/guild/guild.service';
 
 
 @Component({
@@ -17,10 +18,10 @@ export class AddstudentComponent  {
   res: any = [];
   data: any;
 
- constructor(private StudentService:StudentService){}
+ constructor(private StudentService:StudentService,private GuildServices:GuildService){}
   ngOnInit(){
 
-    this.StudentService.GetStudents().subscribe({
+    this.GuildServices.GetGuild().subscribe({
       next: (response: any) => {
         this.data = response },
       error: (error:any) => {
